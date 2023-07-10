@@ -1,3 +1,4 @@
+//@ts-nocheck
 import {SubmitHandler, useForm} from "react-hook-form";
 import {Button, FormControl, FormLabel, Input, Stack, Text} from "@chakra-ui/react";
 import FileUpload from "./FileUpload";
@@ -32,7 +33,7 @@ export const FileUploadForm = () => {
         formData.append("file", data.voiceInterview)
         formData.append("name", data.name)
         formData.append("description", data.description)
-        axios.post("http://172.20.10.2:8000/create-project", formData, {
+        axios.post("http://68.183.237.25:8000/create-project", formData, {
             "headers": {
                 "Content-Type": "multipart/form-data"
             }

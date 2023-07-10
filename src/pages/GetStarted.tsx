@@ -5,18 +5,13 @@ import {
     Heading,
     Text,
     Container,
-    Input,
-    Button,
     SimpleGrid,
     Avatar,
     AvatarGroup,
     useBreakpointValue,
     IconProps,
-    Icon, FormControl, FormLabel, FormErrorMessage,
+    Icon,
 } from '@chakra-ui/react';
-import {SubmitHandler, useForm} from "react-hook-form";
-import {FiFile} from "react-icons/fi";
-import {FileUpload} from "../components/forms/FileUpload";
 import {FileUploadForm} from "../components/forms/FileUploadForm";
 
 const avatars = [

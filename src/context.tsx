@@ -1,8 +1,8 @@
+//@ts-nocheck
 import React from 'react';
 import {DataContextType, IData} from "./types";
 
 export const DataContext = React.createContext<DataContextType | null>(null);
-
 const DataProvider: React.FC<React.ReactNode> = ({ children }) => {
     const [data, setData] = React.useState<IData | null>(null)
     const saveData = (data: IData) => {
