@@ -33,7 +33,7 @@ export const FileUploadForm = () => {
         formData.append("file", data.voiceInterview)
         formData.append("name", data.name)
         formData.append("description", data.description)
-        axios.post("http://68.183.237.25:8000/create-project", formData, {
+        axios.post("http://147.182.203.47:8000/api/create-project", formData, {
             "headers": {
                 "Content-Type": "multipart/form-data"
             }

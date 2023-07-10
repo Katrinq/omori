@@ -21,10 +21,8 @@ export const FileUpload = ({ name, placeholder, acceptedFileTypes, control, chil
 			<InputGroup>
 				<InputLeftElement
 					pointerEvents="none">
-					//@ts-ignore
 					<Icon as={FiFile} />
 				</InputLeftElement>
-				//@ts-ignore
 				<input type='file'
 					   onChange={(e) => onChange(e.target.files[0])}
 					   accept={acceptedFileTypes}
@@ -40,10 +38,8 @@ export const FileUpload = ({ name, placeholder, acceptedFileTypes, control, chil
                             color: 'gray.500',
                         }}
 					placeholder={placeholder || "Your file ..."}
-					//@ts-ignore
 					onClick={() => inputRef.current.click()}
 					readOnly={true}
-					//@ts-ignore
 					value={value && value.name || ''}
 				/>
 			</InputGroup>

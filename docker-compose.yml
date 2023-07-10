@@ -1,0 +1,45 @@
+version: '3.9'
+services:
+  frontend:
+    container_name: omori-frontend
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    networks:
+      - my-net
+
+  backend:
+    container_name: omori-backend
+    build:
+      context: ./backend/app/
+      dockerfile: ./Dockerfile
+    command: ["python", "/usr/src/app/main.py"]
+    volumes:
+      - ./backend/app:/usr/src/app
+    ports:
+      - 8000:8000
+    environment:
+      - ENVIRONMENT=dev
+      - TESTING=0
+      - GOOGLE_APPLICATION_CREDENTIALS=/usr/src/app/service_account.json
+    networks:
+      - my-net
+  webserver:
+    image: nginx
+    container_name: omori-webserver
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+    networks:
+      - my-net
+    external_links:
+      - frontend
+      - backend
+
+networks:
+  my-net:
+    driver: bridge

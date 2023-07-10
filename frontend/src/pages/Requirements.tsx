@@ -15,7 +15,6 @@ import ReactMarkdown from "react-markdown";
 
 export default function Requirements() {
   const { data } = React.useContext(DataContext) as DataContextType;
-  console.log(data)
   return (
     <>
       <SideBar>
