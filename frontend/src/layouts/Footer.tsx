@@ -60,7 +60,7 @@ export default function Footer() {
         align={{ base: 'center', md: 'center' }}>
         <Text>© 2023 Omori Team</Text>
         <Stack direction={'row'} spacing={6}>
-          <SocialButton label={'Github'} href={'#'}>
+          <SocialButton label={'Github'} href={'https://github.com/Katrinq/omori'}>
             <FaGithub/>
           </SocialButton>
         </Stack>
